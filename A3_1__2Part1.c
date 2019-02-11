@@ -25,15 +25,15 @@ Pseudocode:
 
 task main()
 {
-	//turnLEDOff(green);
-	//wait(1);
-	//turnLEDOn(green);
-	//wait(1);
-	//turnLEDOff(green);
-	//wait(1);
-	//turnLEDOn(green);
-	//wait(1);
-	//turnLEDOff(green);
+	turnLEDOff(green);
+	wait(1);
+	turnLEDOn(green);
+	wait(1);
+	turnLEDOff(green);
+	wait(1);
+	turnLEDOn(green);
+	wait(1);
+	turnLEDOff(green);
 
 
 
