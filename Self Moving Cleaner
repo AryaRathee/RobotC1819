@@ -10,12 +10,26 @@ Date:3/15/19
 */
 task main()
 {
+
 	while(true) {
 		startMotor(port3, 50);
 		startMotor(port2, 50);
+
 		if(SensorValue(SONAR) < 42){ //turn right
 			stopMotor(port2);					//turn right
 			wait(2);
+			startMotor(port2, 50);
+			wait(0.5);
+     stopMotor(port2);
+     wait(2);
+     startMotor(port2,50);
 		}
-	}
+
+		if(SensorValue(SONAR) < 42){
+			stopMotor(port3);					//turn right
+			wait(2);
+			startMotor(port3, 50);
+		}
+
+		}
 }
