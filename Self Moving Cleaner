@@ -17,19 +17,21 @@ task main()
 
 		if(SensorValue(SONAR) < 42){ //turn right
 			stopMotor(port2);					//turn right
-			wait(2);
+			wait(2.55);
 			startMotor(port2, 50);
 			wait(0.5);
-     stopMotor(port2);
-     wait(2);
-     startMotor(port2,50);
+			stopMotor(port2);
+			wait(2.55);
+			startMotor(port2,50);
 		}
-
 		if(SensorValue(SONAR) < 42){
-			stopMotor(port3);					//turn right
-			wait(2);
+			stopMotor(port3);
+			wait(2.55);
+			startMotor(port3, 50);
+			wait(0.5);
+			stopMotor(port3);
+			wait(2.55);
 			startMotor(port3, 50);
 		}
-
-		}
+	}
 }
