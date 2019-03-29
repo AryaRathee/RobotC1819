@@ -12,26 +12,36 @@ task main()
 {
 
 	while(true) {
-		startMotor(port3, 50);
+		startMotor(port3, 50); //move car
 		startMotor(port2, 50);
+		while(SensorValue(SONAR) < 10) {
+			startMotor(port3, -50); //reverse car if roadblock
+			startMotor(port2, -50);
+			wait (2);
+			startMotor(port3, 50); //move car
+			startMotor(port2, 50); }
 
-		if(SensorValue(SONAR) < 42){ //turn right
+		if(SensorValue(SONAR) < 45){
 			stopMotor(port2);					//turn right
-			wait(2.55);
-			startMotor(port2, 50);
+			wait(2);
+			startMotor(port2, 50);   //make a 180 turn
 			wait(0.5);
 			stopMotor(port2);
-			wait(2.55);
+			wait(2);
 			startMotor(port2,50);
 		}
-		if(SensorValue(SONAR) < 42){
+		untilSonarLessThan(45, SONAR);
+		startMotor(port3, 50); //move car
+		startMotor(port2, 50);
+		if(SensorValue(SONAR) < 45){ //turn left
 			stopMotor(port3);
-			wait(2.55);
+			wait(2);
 			startMotor(port3, 50);
 			wait(0.5);
-			stopMotor(port3);
-			wait(2.55);
+			stopMotor(port3); //180 turn
+			wait(2);
 			startMotor(port3, 50);
+
 		}
 	}
 }
